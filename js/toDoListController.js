@@ -5,4 +5,8 @@ ToDoListApp.controller('ToDoListController', [function() {
   self.addTask = function() {
     self.taskList.push(self.taskItem);
   }
+
+  self.removeTask = function() {
+
+  }
 }]);

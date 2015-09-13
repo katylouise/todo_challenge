@@ -1,0 +1,20 @@
+.container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.task-list {
+  display: block;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.horizontal-list {
+  list-style: none;
+}
+
+.horizontal-list.btn {
+  display: inline;
+}

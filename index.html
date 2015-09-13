@@ -4,6 +4,7 @@
   <meta charset='utf-8'>
   <title>To-Do List App</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/stylesheet.css">
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -21,21 +22,21 @@
         <button class="btn" ng-click="ToDoCtrl.addTask()">Add Task</button>
       </form>
     </section>
-    <section>
+    <section class="list">
       <ul class="items-to-do">
-        <label ng-repeat="task in ToDoCtrl.taskList">
-          <input type="checkbox" checklist-model="list.tasks" checklist-value="task">{{ task }}
+        <label ng-class="{strike: deleted}" class="task-list" ng-repeat="task in ToDoCtrl.taskList">
+          <input class="list-item" type="checkbox" checklist-model="list.tasks" checklist-value="task" ng-model="deleted" ng-change="ToDoCtrl.changeClass()">{{ task }}
         </label>
       </ul>
     </section>
-    <section>
-      <p class="count">items left</p>
+    <section class="list-count">
+      <p class="count">{{ ToDoCtrl.taskList.length }} items left</p>
     </section>
       <ul class="horizontal-list">
-        <li><button>All</button></li>
-        <li><button>Active</button></li>
-        <li><button>Complete</button></li>
-        <li><button>Clear All</button></li>
+        <li class="btn"><button>All</button></li>
+        <li class="btn"><button>Active</button></li>
+        <li class="btn"><button>Complete</button></li>
+        <li class="btn"><button>Clear All</button></li>
       </ul>
     <section>
 
