@@ -13,7 +13,7 @@ describe('ToDoListController', function() {
 
   describe('adding tasks to the to-do list', function() {
     var items = [
-      "Do the washing up"
+      { taskName: "Do the washing up", completed: false }
     ]
 
     it('displays the task added to the list', function() {

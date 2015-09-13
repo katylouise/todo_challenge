@@ -24,7 +24,7 @@
     </section>
     <section class="list">
       <ul class="items-to-do">
-        <label ng-class="{strike: task.completed}" class="task-list" ng-repeat="task in ToDoCtrl.taskList">
+        <label ng-class="{strike: task.completed}" class="task-list" ng-repeat="task in ToDoCtrl.taskList" ng-show="task.display">
           <input class="list-item" type="checkbox" value="task" ng-model="task.completed" ng-change="ToDoCtrl.toggleCompletion(task.completed)">{{ task.taskName }}
         </label>
       </ul>
@@ -33,10 +33,10 @@
       <p class="count">{{ ToDoCtrl.count() }} items left</p>
     </section>
       <ul class="horizontal-list">
-        <li class="btn"><button>All</button></li>
-        <li class="btn"><button>Active</button></li>
-        <li class="btn"><button>Complete</button></li>
-        <li class="btn"><button>Clear All</button></li>
+        <li class="btn"><button ng-click="ToDoCtrl.showAll()">All</button></li>
+        <li class="btn"><button ng-click="ToDoCtrl.showActive()">Active</button></li>
+        <li class="btn"><button ng-click="ToDoCtrl.showComplete()">Complete</button></li>
+        <li class="btn"><button ng-click="ToDoCtrl.clearAll()">Clear All</button></li>
       </ul>
     <section>
 

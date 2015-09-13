@@ -3,7 +3,7 @@ ToDoListApp.controller('ToDoListController', [function() {
   self.taskList = [];
 
   self.addTask = function() {
-    self.taskList.push({ taskName: self.taskItem, completed: false });
+    self.taskList.push({ taskName: self.taskItem, completed: false, display: true });
   }
 
   self.toggleCompletion = function(item) {
@@ -24,11 +24,36 @@ ToDoListApp.controller('ToDoListController', [function() {
     }
     return count;
   }
-//   self.selectedTasks = function() {
-//     this.taskList = $filter('filter')(this.)
-//   }
-}]);
 
-// $scope.selectedSongs = function () {
-//     $scope.playList = $filter('filter')($scope.selectedAlbumSongs, {checked: true});
-// }
+  self.showActive = function() {
+    for (var i = 0; i < self.taskList.length; i++) {
+      if (self.taskList[i]["completed"] === true) {
+        self.taskList[i].display = false;
+      }
+      else {
+        self.taskList[i].display = true;
+      }
+    }
+  }
+
+  self.showComplete = function() {
+    for (var i = 0; i < self.taskList.length; i++) {
+      if (self.taskList[i]["completed"] === true) {
+        self.taskList[i].display = true;
+      }
+      else {
+        self.taskList[i].display = false;
+      }
+    }
+  }
+
+  self.clearAll = function() {
+    self.taskList = [];
+  }
+
+  self.showAll = function() {
+    for (var i = 0; i < self.taskList.length; i++) {
+      self.taskList[i].display = true;
+    }
+  }
+}]);
