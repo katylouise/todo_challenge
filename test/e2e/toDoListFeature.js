@@ -4,4 +4,11 @@ describe('To Do List', function() {
 
     expect(browser.getTitle()).toEqual('To-Do List App');
   });
+
+  it('displays items added to the list', function() {
+    element(by.model('ToDoCtrl.taskItem')).sendKeys('Make an angular app');
+    element(by.className('btn')).click();
+
+    expect(element(by.binding('task')).getText()).toEqual('Make an angular app');
+  });
 });
