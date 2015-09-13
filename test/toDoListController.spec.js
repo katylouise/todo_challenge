@@ -8,16 +8,18 @@ describe('ToDoListController', function() {
   }));
 
   it('initializes with an empty list', function() {
-    expect(ctrl.taskList).toBeUndefined();
+    expect(ctrl.taskList.length).toBe(0);
   });
 
   describe('adding tasks to the to-do list', function() {
     var items = [
-      "Do the washing up",
-      "Make an angular app",
-      "Go for a run"
+      "Do the washing up"
     ]
 
-    expect(ctrl.taskList).toEqual(items);
+    it('displays the task added to the list', function() {
+      ctrl.taskItem = 'Do the washing up';
+      ctrl.addTask();
+      expect(ctrl.taskList).toEqual(items);
+    });
   });
 });
