@@ -24,13 +24,13 @@
     </section>
     <section class="list">
       <ul class="items-to-do">
-        <label ng-class="{strike: deleted}" class="task-list" ng-repeat="task in ToDoCtrl.taskList">
-          <input class="list-item" type="checkbox" checklist-model="list.tasks" checklist-value="task" ng-model="deleted" ng-change="ToDoCtrl.changeClass()">{{ task }}
+        <label ng-class="{strike: task.completed}" class="task-list" ng-repeat="task in ToDoCtrl.taskList">
+          <input class="list-item" type="checkbox" value="task" ng-model="task.completed" ng-change="ToDoCtrl.toggleCompletion(task.completed)">{{ task.taskName }}
         </label>
       </ul>
     </section>
     <section class="list-count">
-      <p class="count">{{ ToDoCtrl.taskList.length }} items left</p>
+      <p class="count">{{ ToDoCtrl.count() }} items left</p>
     </section>
       <ul class="horizontal-list">
         <li class="btn"><button>All</button></li>
