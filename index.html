@@ -16,7 +16,17 @@
       <h1>What do I need to do?</h1>
     </header>
     <section>
-    <ul class="items-to-do"></ul>
+      <form class="form-horizontal">
+        <input type="text" ng-model="ToDoCtrl.taskItem">
+        <button class="btn" ng-click="ToDoCtrl.addTask()">Add Task</button>
+      </form>
+    </section>
+    <section>
+      <ul class="items-to-do">
+        <label ng-repeat="task in ToDoCtrl.taskList">
+          <input type="checkbox" checklist-model="list.tasks" checklist-value="tasks">{{ task }}
+        </label>
+      </ul>
     </section>
     <section>
       <p class="count">items left</p>
