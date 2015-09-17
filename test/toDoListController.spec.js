@@ -24,4 +24,10 @@ describe('ToDoListController', function() {
       expect(ctrl.taskList).toEqual(items);
     });
   });
+
+  describe('marking a task as done', function() {
+    xit('marks a task as completed', function() {
+
+    });
+  });
 });
