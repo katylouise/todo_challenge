@@ -46,9 +46,10 @@ describe('To Do List', function() {
     taskButton.click();
     tasks.last().click();
     activeButton.click();
-    tasks.then(function(items) {
-      expect(items.length).toEqual(1);
-    });
+    // tasks.then(function(items) {
+    //   expect(items.length).toEqual(1);
+    // });
+  expect(tasks.count()).toEqual(1);
     expect(tasks.get(0).getText()).toEqual('Make an angular app');
     //look at using filter to make these two tests more specific and grab each specific task
   });
