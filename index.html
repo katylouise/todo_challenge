@@ -30,21 +30,16 @@
       </ul>
     </section>
     <section class="list-count">
-      <p class="count">{{ ToDoCtrl.count() }} items left</p>
+      <p class="count_singular" ng-show="ToDoCtrl.count() === 1">{{ ToDoCtrl.count() }} item left</p>
+      <p class="count_plural" ng-hide="ToDoCtrl.count() === 1">{{ ToDoCtrl.count() }} items left</p>
     </section>
-      <ul class="horizontal-list">
-        <li class="btn"><button ng-click="myFilter = {}">All</button></li>
-        <li class="btn"><button ng-click="myFilter = {completed: false}">Active</button></li>
-        <li class="btn"><button ng-click="myFilter = {completed: true}">Complete</button></li>
-        <li class="btn"><button ng-click="ToDoCtrl.clearAll()">Clear All</button></li>
-
-    <!--     <li class="btn"><button ng-click="ToDoCtrl.showAll()">All</button></li>
-        <li class="btn"><button ng-click="ToDoCtrl.showActive()">Active</button></li>
-        <li class="btn"><button ng-click="ToDoCtrl.showComplete()">Complete</button></li>
-        <li class="btn"><button ng-click="ToDoCtrl.clearAll()">Clear All</button></li> -->
-      </ul>
     <section>
-
+      <ul class="horizontal-list">
+        <li class="btn btn-all"><button ng-click="myFilter = {}">All</button></li>
+        <li class="btn btn-active"><button ng-click="myFilter = {completed: false}">Active</button></li>
+        <li class="btn btn-completed"><button ng-click="myFilter = {completed: true}">Complete</button></li>
+        <li class="btn btn-clear"><button ng-click="ToDoCtrl.clearAll()">Clear All</button></li>
+      </ul>
     </section>
   </div>
 </body>
