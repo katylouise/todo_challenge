@@ -7,26 +7,18 @@ ToDoListApp.controller('ToDoListController', [function() {
   }
 
   self.toggleCompletion = function(item) {
-    if (item.completed === true) {
-      item.completed = false
-    }
-    else {
-      item.completed = true
-    }
+    return item.completed ? item.completed = false : item.completed = true
+  }
+
+  function filterByCompletion(obj) {
+    return obj.completed === false;
   }
 
   self.count = function() {
-    count = 0;
-    for (var i = 0; i < self.taskList.length; i++) {
-      if (self.taskList[i]["completed"] === false) {
-        count += 1;
-      }
-    }
-    return count;
+    return self.taskList.filter(filterByCompletion).length;
   }
 
   self.clearAll = function() {
     self.taskList = [];
   }
-
 }]);

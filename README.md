@@ -47,7 +47,6 @@ Still to implement
 ===================
 * Proper testing
 * Full CSS
-* Using filters for buttons rather than looping through array
 * Nicer interface - option to delete a task - maybe button appears on hover?
 * Persistence
 * Hook up to a server (maybe node?)
