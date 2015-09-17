@@ -36,9 +36,9 @@
     <section>
       <ul class="horizontal-list">
         <li class="btn btn-all"><button ng-click="myFilter = {}">All</button></li>
-        <li class="btn btn-active"><button ng-click="myFilter = {completed: false}">Active</button></li>
+        <li class="btn"><button class="btn-active" ng-click="myFilter = {completed: false}">Active</button></li>
         <li class="btn btn-completed"><button ng-click="myFilter = {completed: true}">Complete</button></li>
-        <li class="btn btn-clear"><button ng-click="ToDoCtrl.clearAll()">Clear All</button></li>
+        <li class="btn"><button class="btn-clear" ng-click="ToDoCtrl.clearAll()">Clear All</button></li>
       </ul>
     </section>
   </div>
