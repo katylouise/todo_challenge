@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start test/karma.conf.js",
-    "start": "http-server"
+    "start": "http-server",
+    "postinstall": "bower cache clean && bower install"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/katylouise/todo_challenge#readme",
   "devDependencies": {
+    "bower": "^1.5.2",
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.9",
     "karma-chrome-launcher": "^0.2.0",
