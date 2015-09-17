@@ -1,6 +1,6 @@
 describe('To Do List', function() {
   var inputBox = element(by.model('ToDoCtrl.taskItem'));
-  var taskButton = element(by.className('btn'));
+  var taskButton = element(by.className('addTask'));
   it('has a title', function() {
     browser.get('http://localhost:8080');
 
@@ -16,6 +16,6 @@ describe('To Do List', function() {
   it('displays number of items in the list', function() {
     inputBox.sendKeys('Make an angular app');
     taskButton.click();
-    expect(element(by.className('count')).getText()).toEqual('1 items left');
+    expect(element(by.className('count')).getText()).toEqual('2 items left');
   });
 });
