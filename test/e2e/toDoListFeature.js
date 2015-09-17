@@ -40,13 +40,17 @@ describe('To Do List', function() {
     expect(element(by.className('count_singular')).getText()).toEqual('1 item left');
   });
 
-  xit('can display only active items', function() {
+  it('can display only active items', function() {
     var task = 'Go to the gym';
     inputBox.sendKeys(task);
     taskButton.click();
     tasks.last().click();
     activeButton.click();
+    tasks.then(function(items) {
+      expect(items.length).toEqual(1);
+    });
     expect(tasks.get(0).getText()).toEqual('Make an angular app');
+    //look at using filter to make these two tests more specific and grab each specific task
   });
 
   xit('can display only completed items', function() {
