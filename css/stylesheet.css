@@ -1,3 +1,7 @@
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
 .container {
   width: 500px;
   margin: 0 auto;
@@ -17,4 +21,10 @@
 
 .horizontal-list.btn {
   display: inline;
+}
+
+.items-to-do label .list-item {
+  margin-right: 10px;
+  height: 15px;
+  width: 15px;
 }
