@@ -3,6 +3,7 @@ describe('To Do List', function() {
   var inputBox = element(by.model('ToDoCtrl.taskItem'));
   var tasks = element.all(by.repeater('task in ToDoCtrl.taskList'));
   var activeButton = element(by.className('btn-active'));
+  var completedButton = element(by.className('btn-completed'));
   var clearButton = element(by.className('btn-clear'));
   var allButton = element(by.className('btn-all'));
 
@@ -38,18 +39,18 @@ describe('To Do List', function() {
 
   it('can display only active items', function() {
     inputBox.sendKeys('Go to the gym\n');
-    tasks.last().click();
+    tasks.first().click();
     activeButton.click();
-    // tasks.then(function(items) {
-    //   expect(items.length).toEqual(1);
-    // });
     expect(tasks.count()).toEqual(1);
-    expect(tasks.get(0).getText()).toEqual('Make an angular app');
-    //look at using filter to make these two tests more specific and grab each specific task
+    expect(tasks.get(0).getText()).toEqual('Go to the gym');
   });
 
-  xit('can display only completed items', function() {
-
+  it('can display only completed items', function() {
+    inputBox.sendKeys('Go to the gym\n');
+    tasks.last().click();
+    completedButton.click();
+    expect(tasks.count()).toEqual(1);
+    expect(tasks.get(0).getText()).toEqual('Go to the gym');
   });
 
   it('can clear all items', function() {
