@@ -1,7 +1,6 @@
 describe('To Do List', function() {
 
   var inputBox = element(by.model('ToDoCtrl.taskItem'));
-  var taskButton = element(by.className('addTask'));
   var tasks = element.all(by.repeater('task in ToDoCtrl.taskList'));
   var activeButton = element(by.className('btn-active'));
   var clearButton = element(by.className('btn-clear'));
@@ -12,8 +11,7 @@ describe('To Do List', function() {
   });
 
   beforeEach(function() {
-    inputBox.sendKeys('Make an angular app');
-    taskButton.click();
+    inputBox.sendKeys('Make an angular app\n');
     inputBox.clear();
   });
 
@@ -26,11 +24,9 @@ describe('To Do List', function() {
   });
 
   it('allows tasks to be struck-through when completed', function() {
-    inputBox.sendKeys('Go to the gym');
-    taskButton.click();
+    inputBox.sendKeys('Go to the gym\n');
     inputBox.clear();
-    inputBox.sendKeys('Bake a cake');
-    taskButton.click();
+    inputBox.sendKeys('Bake a cake\n');
     tasks.last().click();
     expect(tasks.last().getCssValue('text-decoration')).toEqual('line-through');
     expect(element(by.className('count_plural')).getText()).toEqual('2 items left');
@@ -41,9 +37,7 @@ describe('To Do List', function() {
   });
 
   it('can display only active items', function() {
-    var task = 'Go to the gym';
-    inputBox.sendKeys(task);
-    taskButton.click();
+    inputBox.sendKeys('Go to the gym\n');
     tasks.last().click();
     activeButton.click();
     // tasks.then(function(items) {
@@ -66,9 +60,7 @@ describe('To Do List', function() {
   });
 
   it('can display all items', function() {
-    var task = 'Go to the gym';
-    inputBox.sendKeys(task);
-    taskButton.click();
+    inputBox.sendKeys('Go to the gym\n');
     tasks.last().click();
     activeButton.click();
     allButton.click();

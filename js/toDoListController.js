@@ -4,6 +4,7 @@ ToDoListApp.controller('ToDoListController', [function() {
 
   self.addTask = function() {
     self.taskList.push({ taskName: self.taskItem, completed: false });
+    self.taskItem = "";
   }
 
   self.toggleCompletion = function(item) {

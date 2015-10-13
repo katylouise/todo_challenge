@@ -15,24 +15,25 @@
 <body ng-controller="ToDoListController as ToDoCtrl">
   <div class="container">
     <header>
-      <h1>What do I need to do today?</h1>
+      <h1>Organise Your Life</h1>
     </header>
-    <section>
-      <form class="form-horizontal">
-        <input type="text" ng-model="ToDoCtrl.taskItem">
-        <button class="btn addTask" ng-click="ToDoCtrl.addTask()">Add Task</button>
-      </form>
-    </section>
     <section class="list">
-      <ul class="items-to-do">
-        <label ng-class="{strike: task.completed}" class="task-list" ng-repeat="task in ToDoCtrl.taskList | filter:myFilter">
-          <input class="list-item" type="checkbox" value="task" ng-model="task.completed" ng-change="ToDoCtrl.toggleCompletion(task.completed)">{{ task.taskName }}
-        </label>
-      </ul>
-    </section>
-    <section class="list-count">
-      <p class="count_singular" ng-show="ToDoCtrl.count() === 1">{{ ToDoCtrl.count() }} item left</p>
-      <p class="count_plural" ng-hide="ToDoCtrl.count() === 1">{{ ToDoCtrl.count() }} items left</p>
+      <div>
+        <form class="form-horizontal" ng-submit="ToDoCtrl.addTask()">
+          <input type="text" ng-model="ToDoCtrl.taskItem" placeholder="Add a task...">
+        </form>
+      </div>
+      <div class="list-items">
+        <ul class="items-to-do">
+          <label ng-class="{strike: task.completed}" class="task-list" ng-repeat="task in ToDoCtrl.taskList | filter:myFilter">
+            <input class="list-item" type="checkbox" value="task" ng-model="task.completed" ng-change=" ToDoCtrl.toggleCompletion(task.completed)">{{ task.taskName }}
+          </label>
+        </ul>
+      </div>
+      <div class="list-count">
+        <p class="count_singular" ng-show="ToDoCtrl.count() === 1">{{ ToDoCtrl.count() }} item left</p>
+        <p class="count_plural" ng-hide="ToDoCtrl.count() === 1">{{ ToDoCtrl.count() }} items left</p>
+      </div>
     </section>
     <section>
       <ul class="horizontal-list">

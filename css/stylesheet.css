@@ -3,7 +3,21 @@
 }
 
 .container {
-  width: 500px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.list {
+  margin: 0 auto;
+}
+
+.form-horizontal {
+  width: 200px;
   margin: 0 auto;
 }
 
