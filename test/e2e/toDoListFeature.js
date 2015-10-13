@@ -55,9 +55,7 @@ describe('To Do List', function() {
 
   it('can clear all items', function() {
     clearButton.click();
-    tasks.then(function(items) {
-      expect(items.length).toEqual(0);
-    });
+    expect(tasks.count()).toEqual(0);
   });
 
   it('can display all items', function() {
@@ -65,8 +63,6 @@ describe('To Do List', function() {
     tasks.last().click();
     activeButton.click();
     allButton.click();
-    tasks.then(function(items) {
-      expect(items.length).toEqual(2);
-    });
+    expect(tasks.count()).toEqual(2);
   });
 });
