@@ -2,9 +2,19 @@
   font-family: 'Raleway', sans-serif;
 }
 
+body {
+  background-color: #84DCC6;
+}
+
 .container {
   width: 600px;
   margin: 0 auto;
+  border: 2px solid #F3F3F3;
+  border-radius: ;
+  background: #ffffff;
+  border-radius: 8px;
+  margin-top: 200px;
+  padding: 20px 10px;
 }
 
 header {
@@ -21,6 +31,16 @@ header {
   margin: 0 auto;
 }
 
+.input-task {
+  width: 200px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.list-items, .list-count {
+  margin-left: 100px;
+}
+
 .task-list {
   display: block;
 }
@@ -29,12 +49,24 @@ header {
   text-decoration: line-through;
 }
 
+.button-container {
+  text-align: center;
+}
+
 .horizontal-list {
+  padding: 0;
   list-style: none;
 }
 
 .horizontal-list.btn {
   display: inline;
+}
+
+.horizontal-list button {
+  background-color: #FF686B;
+  border: 2px solid #FF323B;
+  border-radius: 5px;
+  color: #FFFFFF;
 }
 
 .items-to-do label .list-item {

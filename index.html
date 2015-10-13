@@ -4,6 +4,7 @@
   <meta charset='utf-8'>
   <title>To-Do List App</title>
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/stylesheet.css">
   <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -20,7 +21,7 @@
     <section class="list">
       <div>
         <form class="form-horizontal" ng-submit="ToDoCtrl.addTask()">
-          <input type="text" ng-model="ToDoCtrl.taskItem" placeholder="Add a task...">
+          <input class="input-task" type="text" ng-model="ToDoCtrl.taskItem" placeholder="Add a task...">
         </form>
       </div>
       <div class="list-items">
@@ -36,12 +37,14 @@
       </div>
     </section>
     <section>
-      <ul class="horizontal-list">
-        <li class="btn"><button class="btn-all" ng-click="myFilter = {}">All</button></li>
-        <li class="btn"><button class="btn-active" ng-click="myFilter = {completed: false}">Active</button></li>
-        <li class="btn"><button class="btn-completed" ng-click="myFilter = {completed: true}">Complete</button></li>
-        <li class="btn"><button class="btn-clear" ng-click="ToDoCtrl.clearAll()">Clear All</button></li>
-      </ul>
+      <div class="button-container">
+        <ul class="horizontal-list">
+          <li class="btn"><button class="btn-all" ng-click="myFilter = {}"> Show All</button></li>
+          <li class="btn"><button class="btn-active" ng-click="myFilter =   {completed: false}">Active</button></li>
+          <li class="btn"><button class="btn-completed" ng-click="myFilter =  {completed: true}">Completed</button></li>
+          <li class="btn"><button class="btn-clear" ng-click="ToDoCtrl. clearAll()">Clear All</button></li>
+        </ul>
+      </div>
     </section>
   </div>
 </body>
