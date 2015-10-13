@@ -29,12 +29,9 @@ http-server
 protractor test/e2e/conf.js
 ```
 
-##v1.0
+## v1.0
 
 * You can add tasks to the list.
 * Once completed, a task can be struck-through.
 * Tasks can be filtered by active or completed.
 
-Still to implement
-===================
-* Persistence
