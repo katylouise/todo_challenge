@@ -1,7 +1,7 @@
 {
   "name": "todo_challenge",
   "version": "1.0.0",
-  "description": "* Deadline: submit completed pull request by 9am on Monday * You may use whatever level of JavaScript you feel comfortable with - pure JS, jQuery, Angular, or whatever weird and wonderful framework you want to try. Extra points for DogeScript",
+  "description": "To-do list app",
   "main": "index.js",
   "scripts": {
     "test": "karma start test/karma.conf.js",
