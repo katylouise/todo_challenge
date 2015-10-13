@@ -1,7 +1,5 @@
 # Todo Challenge
 
-
-
 Steps
 -------
 
@@ -45,9 +43,6 @@ So I never see them again
 
 Still to implement
 ===================
-* Proper testing
-* Full CSS
-* Nicer interface - option to delete a task - maybe button appears on hover?
 * Persistence
 * Hook up to a server (maybe node?)
 * Make the README nice and more informative (eg. how to run, setup, etc.)
